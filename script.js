@@ -1,17 +1,26 @@
 let totalQuestions = 0;
 let currentQuestion = 0;
 let correctAnswers = 0;
+let incorrectAnswers = 0;
+let usedLetters = [];
+
+function showModal() {
+    document.getElementById('question-modal').style.display = 'flex';
+}
 
 function startTest() {
-    totalQuestions = parseInt(prompt("Enter the number of questions:"), 10);
-    if (isNaN(totalQuestions) || totalQuestions <= 0) {
+    totalQuestions = parseInt(document.getElementById('question-input').value, 10);
+    if (isNaN(totalQuestions) || totalQuestions <= 0 || totalQuestions > 500) {
         alert("Please enter a valid number of questions.");
         return;
     }
 
     currentQuestion = 0;
     correctAnswers = 0;
+    incorrectAnswers = 0;
+    usedLetters = [];
 
+    document.getElementById('question-modal').style.display = 'none';
     document.getElementById('start-btn').style.display = 'none';
     document.getElementById('display').style.display = 'block';
     document.getElementById('result').style.display = 'block';
@@ -49,12 +58,21 @@ function checkAnswer() {
     } else if (resultField.value.length >= correctAnswer.toString().length) {
         resultField.value = '';
         resultField.style.borderColor = 'red';
+        incorrectAnswers++;
     }
 }
 
 function generateRandomLetter() {
     let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    let randomLetter = letters[Math.floor(Math.random() * letters.length)];
+    let randomLetter = '';
+    if (totalQuestions <= 26) {
+        do {
+            randomLetter = letters[Math.floor(Math.random() * letters.length)];
+        } while (usedLetters.includes(randomLetter));
+        usedLetters.push(randomLetter);
+    } else {
+        randomLetter = letters[Math.floor(Math.random() * letters.length)];
+    }
     document.getElementById('display').innerText = randomLetter;
 }
 
@@ -65,6 +83,6 @@ function endTest() {
     document.querySelector('.button-grid').style.display = 'none';
 
     let testResult = document.getElementById('test-result');
-    testResult.innerText = `Test complete! You got ${correctAnswers} out of ${totalQuestions} correct.`;
+    testResult.innerText = `Test complete! You got ${correctAnswers-incorrectAnswers} correct and ${incorrectAnswers} incorrect out of ${totalQuestions} questions.`;
     testResult.style.display = 'block';
 }
