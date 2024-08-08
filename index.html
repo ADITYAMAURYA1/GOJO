@@ -3,20 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gojo - Letter to Number</title>
+    <title>GOJO GAME</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
 </head>
 <body>
 
-
-
     <div id="letter-to-number">
-        
-        <h1 id="heading">Gojo Letter</h1>
-        <button id="start-btn" class="button" onclick="startTest()">Start</button>
+        <div id="gojo-heading">GOJO GAME</div>
+        <button id="start-btn" class="button" onclick="showModal()">Start</button>
         <div id="display" style="display:none;">A</div>
-        <input type="text" id="result" readonly style="display:none;text-align: center;">
+        <input type="text" id="result" readonly style="display:none;">
         <div class="button-grid" style="display:none;">
             <button id="btn-1" class="button" onclick="buttonClick(1)">1</button>
             <button id="btn-2" class="button" onclick="buttonClick(2)">2</button>
@@ -32,9 +28,21 @@
             <button id="btn-clear" class="button" onclick="clearResult()">X</button>
         </div>
         <div id="test-result"></div>
-        <p style="text-align:center;">This site is developed and maintained by ADITYA MAURYA</p>
+         <div id="footer">
+        The site is developed and maintained by Aditya Maurya
+    </div>
     </div>
 
+   
 
+    <!-- Modal for Question Input -->
+    <div id="question-modal">
+        <div class="modal-content">
+            <h2>Enter Number of Questions</h2>
+            <input type="number" id="question-input" placeholder="Up to 500">
+            <button class="button" onclick="startTest()">Start Test</button>
+        </div>
+    </div>
+<script src="script.js"></script>
 </body>
 </html>
