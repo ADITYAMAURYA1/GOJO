@@ -17,7 +17,7 @@ In GOJO, a random letter is displayed on the screen, and your task is to input i
 
 You can play GOJO GAME directly in your browser! Just visit our live site:
 
-🔗 [GOJO GAME](https://adityamaurya1.github.io/GOJO/)
+🔗 [GOJO GAME](https://adityamaurya1.github.io/Gojo/)
 
 No installation or setup is required – simply open the link and start playing!
 
