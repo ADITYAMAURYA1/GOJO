@@ -1,6 +1,6 @@
 # GOJO GAME 🎮
 
-Welcome to **GOJO GAME** – a fun and interactive way to learn the numerical positions of letters in the English alphabet! Whether you're a student, a teacher, or just someone looking to sharpen your skills, GOJO provides a simple yet engaging interface to help you master letter positions with ease.
+Welcome to **GOJO GAME** **This game is especially helpful for reasoning students**, as it strengthens alphabetical position concepts that are frequently used in logical reasoning, coding–decoding, alphabetical series, and ranking-based questions. Regular practice with GOJO GAME improves speed, accuracy, and mental mapping of letters to numbers, which is essential for competitive exams like SSC, Banking, Railways, and other aptitude-based tests.
 
 ## How It Works 🚀
 
